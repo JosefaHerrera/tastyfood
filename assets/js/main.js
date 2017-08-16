@@ -4,18 +4,23 @@
   //$('.collapsible').collapsible();
 
   $(document).ready(function(){
-  	$("#iniciar-sesion").click(function(event){
-  		if($("#name-signup").val() == "" || !(/[0-9]/.test($("#name-signup").val()))){
-  			$("#name-signup").append($("#name-signup").val("Add name"));
+  	$("#iniciar-sesion").click(function(){
+  		var valEmail = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+  		var valPass = /^\d{6}([0-9])*$/;
+
+  		if($('.form-control').val().length == 0 || $('.form-control').val().length === ""){
+  			alert('The field is empty');
+  			return false;
   		}
-  		if( $("#email-signup").val() == "" || !(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($("#email-signup").val()))){
-  			$("#email-signup").append($("#email-signup").val("Add valid email"));
+  		if(!valEmail.test($('#email-signup').val().trim())){
+  			alert('Invalid email');
   		}
-  		if( $("#pass-signup").val() == "" || !(/^\d{8}([0-9])*$/.test($("#pass-signup").val())) ){
-  			$("#pass-signup").append($("#pass-signup").val("Add valid password"));
+  		if(!valPass.test($('#pass-signup').val().trim())){
+  			alert('Invalid password');
   		}
   		else{
-  			$("#iniciar-sesion").attr("href","search.html");
+  			window.location.href = 'search.html';
   		}
-  	});
+
+  	});		
   });
