@@ -28,7 +28,7 @@ $(document).ready(function() {
 			var name = ele.restaurant.name;
 			var comuna = ele.restaurant.location.locality;
 			console.log(img);
-			$(".contenedorjson").append("<li><div class='card'><div class='card-image'><img src='"+img+"'></div><div class='card-content'><p>"+name+" "+comuna+"</p></div></div></li>");
+			$(".contenedorjson").append("<li><div class='card'><div class='card-image'><img src='"+img+"'></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><br><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
 		})
 	})
 	.fail(function(response) {
