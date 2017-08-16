@@ -20258,3 +20258,19 @@ if (jQuery) {
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
 
+  $(document).ready(function(){
+  	$("#iniciar-sesion").click(function(event){
+  		if($("#name-signup").val() == "" || !(/[0-9]/.test($("#name-signup").val()))){
+  			$("#name-signup").append($("#name-signup").val("Error"));
+  		}
+  		if( $("#email-signup").val() == "" || !(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($("#email-signup").val()))){
+  			$("#email-signup").append($("#email-signup").val("Error"));
+  		}
+  		if( $("#pass-signup").val() == "" || !(/^\d{8}([0-9])*$/.test($("#pass-signup").val())) ){
+  			$("#pass-signup").append($("#pass-signup").val("Error"));
+  		}
+  		else{
+  			$("#iniciar-sesion").attr("href","search.html");
+  		}
+  	});
+  });
