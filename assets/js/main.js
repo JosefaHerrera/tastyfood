@@ -7,7 +7,8 @@ $(document).ready(function() {
 	//Initalize select
 	$('select').material_select();
 	
-	$('#ciudades').on('change', function() {
+	$('#ciudades').change(function() {
+		$(".contenedorjson").empty(); //Al selecciona una nueva opciópn en el selec, se limpia el espacio y se anida la nueva info
 	    var idCiudad = $('#ciudades').val();
 	    console.log(idCiudad);
 	    //valor seleccionado por el usuario
@@ -32,8 +33,7 @@ $(document).ready(function() {
 	            var img = ele.restaurant.thumb;
 	            var name = ele.restaurant.name;
 	            var comuna = ele.restaurant.location.locality;
-	            //$(".contenedorjson").empty(); //Al selecciona una nueva opciópn en el selec, se limpia el espacio y se anida la nueva info
-	            $(".contenedorjson").append("<li><div class='card'><div class='card-image'><img src='"+img+"'></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><br><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
+	            $(".contenedorjson").append("<li><div class='card'><div class='card-image'><img src='"+img+"'></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
 	            
 
 

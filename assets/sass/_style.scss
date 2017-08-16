@@ -26,24 +26,40 @@ nav{
 	.card-content{
 		background-color: $naranja;
     	color: white;
-    	display: flex;
+    	
     	.fa-cutlery{
     		font-size: 16px;
 		    margin-left: -6%;
 		    margin-right: 5%;
     	}
     	.fa-map-marker{
-    		margin-left: 15%;
+    		margin-left: -5%;
     		margin-right: 2%;
     	}
     	.nombreR{
     		font-size: 12px;
     		font-weight: 100;
+    		position: relative;
+		    top: -18px;
+		    left: 11px;
     	}
     	.comuna{
     		font-size: 12px;
     		font-weight: 100;
+    		position: relative;
+		    top: -18px;
+		    left: 6%;
     	}
 	}
 }
 /* FIN ESTILOS SEARCH */
+
+/* FOOTER */
+footer{
+	background-color:$gris;
+	width: 100%;
+    height: 241px;
+    position: fixed;
+    top: 62%;
+}
+/* FIN FOOTER */
