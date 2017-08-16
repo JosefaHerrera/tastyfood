@@ -1,3 +1,52 @@
 nav{
 	background-color: $naranja;
+	span{
+    margin-left: 182px;
+    font-size: 34px;
+}
+.side-nav li>a {
+    color: $naranja;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
+}
+/*JOSEFA*/
+.profile{
+	background-color: $gris;
+	.photo{
+		background-color: $naranja;
+		    margin-top: -20px;
+	}
+	p{
+    margin-left: 20px;
+    color:$naranja;
+}
+	.white {
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h6{
+    font-size: 19px;
+    color: white;
+
+}
+h4{
+	margin-top: 94px;
+}
+.favorites{
+	background-color: white;
+	.naranjop {
+    background-color: $naranja;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+}
 }
