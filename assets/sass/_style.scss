@@ -4,6 +4,15 @@ nav{
     margin-left: 182px;
     font-size: 34px;
 }
+.side-nav li>a {
+    color: $naranja;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
 }
 /*JOSEFA*/
 .profile{
