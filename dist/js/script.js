@@ -20264,7 +20264,7 @@ if (jQuery) {
   		var valPass = /^\d{6}([0-9])*$/;
 
   		if($('.form-control').val().length == 0 || $('.form-control').val().length === ""){
-  			alert('el campo está vacío');
+  			alert('The field is empty');
   			return false;
   		}
   		if(!valEmail.test($('#email-signup').val().trim())){
@@ -20279,19 +20279,3 @@ if (jQuery) {
 
   	});		
   });
-
-
-  /*
-if($("#name-signup").val() == "" || !(/[0-9]/.test($("#name-signup").val()))){
-  			$("#name-signup").append($("#name-signup").val("Add name"));
-  		}
-  		if( $("#email-signup").val() == "" || !(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($("#email-signup").val()))){
-  			$("#email-signup").append($("#email-signup").val("Add valid email"));
-  		}
-  		if( $("#pass-signup").val() == "" || !(/^\d{8}([0-9])*$/.test($("#pass-signup").val())) ){
-  			$("#pass-signup").append($("#pass-signup").val("Add valid password"));
-  		}
-  		else{
-  			$("#iniciar-sesion").attr("href","search.html");
-  		}
-  */
