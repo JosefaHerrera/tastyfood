@@ -20264,14 +20264,14 @@ if (jQuery) {
   		var valPass = /^\d{6}([0-9])*$/;
 
   		if($('.form-control').val().length == 0 || $('.form-control').val().length === ""){
-  			alert('The field is empty');
+  			$(".name-error").append('<span>Invalid name</span>');
   			return false;
   		}
   		if(!valEmail.test($('#email-signup').val().trim())){
-  			alert('Invalid email');
+        $(".email-error").append('<span>Invalid email</span>');
   		}
   		if(!valPass.test($('#pass-signup').val().trim())){
-  			alert('Invalid password');
+  			$(".pass-error").append('<span>Invalid Password (min 6 characters)</span>');
   		}
   		else{
   			window.location.href = 'search.html';
