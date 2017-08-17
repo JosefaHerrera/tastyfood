@@ -6,12 +6,12 @@
 
 /*INICIO validaciones*/
   $(document).ready(function(){
-<<<<<<< HEAD
+
   	$("#iniciar-sesion").click(function(event){
   		if($("#name-signup").val() == "" || !(/[0-9]/.test($("#name-signup").val()))){
   			$("#name-signup").append($("#name-signup").val("Add name"));
         localStorage.setItem('nombre',$("#name-signup").val());
-=======
+
   	$("#iniciar-sesion").click(function(){
   		var valEmail = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
   		var valPass = /^\d{6}([0-9])*$/;
@@ -19,7 +19,7 @@
   		if($('.form-control').val().length == 0 || $('.form-control').val().length === ""){
   			$(".name-error").append('<span>Invalid name</span>');
   			return false;
->>>>>>> e7a63149392b8cda7977e183d5c8e3122880eaff
+
   		}
       //validar email
   		if(!valEmail.test($('#email-signup').val().trim())){
@@ -33,13 +33,14 @@
   		else{
   			window.location.href = 'search.html';
   		}
-<<<<<<< HEAD
+
   	});
         var name = localStorage.getItem('nombre');
     $('#nombre').html(name);
+  };
+  	});		
   });
-
-
+/*FIN validaciones*/
 $(document).ready(function() {
 	// Initialize collapse button
 	$(".button-collapse").sideNav();
@@ -105,14 +106,7 @@ $(document).ready(function() {
 	    });
 	    
 	});
-
-
-
 });
 
-=======
-
-  	});		
-  });
 /*FIN validaciones*/
->>>>>>> e7a63149392b8cda7977e183d5c8e3122880eaff
+
