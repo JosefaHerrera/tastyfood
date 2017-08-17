@@ -4,21 +4,36 @@
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
 
+/*INICIO validaciones*/
   $(document).ready(function(){
+<<<<<<< HEAD
   	$("#iniciar-sesion").click(function(event){
   		if($("#name-signup").val() == "" || !(/[0-9]/.test($("#name-signup").val()))){
   			$("#name-signup").append($("#name-signup").val("Add name"));
         localStorage.setItem('nombre',$("#name-signup").val());
+=======
+  	$("#iniciar-sesion").click(function(){
+  		var valEmail = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+  		var valPass = /^\d{6}([0-9])*$/;
+      //validar campos vacios
+  		if($('.form-control').val().length == 0 || $('.form-control').val().length === ""){
+  			$(".name-error").append('<span>Invalid name</span>');
+  			return false;
+>>>>>>> e7a63149392b8cda7977e183d5c8e3122880eaff
   		}
-  		if( $("#email-signup").val() == "" || !(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($("#email-signup").val()))){
-  			$("#email-signup").append($("#email-signup").val("Add valid email"));
+      //validar email
+  		if(!valEmail.test($('#email-signup').val().trim())){
+        $(".email-error").append('<span>Invalid email</span>');
   		}
-  		if( $("#pass-signup").val() == "" || !(/^\d{8}([0-9])*$/.test($("#pass-signup").val())) ){
-  			$("#pass-signup").append($("#pass-signup").val("Add valid password"));
+      //validar contraseña
+  		if(!valPass.test($('#pass-signup').val().trim())){
+  			$(".pass-error").append('<span>Invalid Password (min 6 characters)</span>');
   		}
+      //enviar a la siguiente página
   		else{
-  			$("#iniciar-sesion").attr("href","search.html");
+  			window.location.href = 'search.html';
   		}
+<<<<<<< HEAD
   	});
         var name = localStorage.getItem('nombre');
     $('#nombre').html(name);
@@ -81,3 +96,9 @@ $(document).ready(function() {
 
 });
 
+=======
+
+  	});		
+  });
+/*FIN validaciones*/
+>>>>>>> e7a63149392b8cda7977e183d5c8e3122880eaff
