@@ -50,6 +50,10 @@ nav{
 		    top: -18px;
 		    left: 6%;
     	}
+        .restdetails{
+            color:white;
+            cursor:pointer;
+        }
 	}
 }
 /* FIN ESTILOS SEARCH */
@@ -57,9 +61,46 @@ nav{
 /* FOOTER */
 footer{
 	background-color:$gris;
-	width: 100%;
-    height: 241px;
+    width: 100%;
     position: fixed;
-    top: 62%;
+    bottom: 0;
+    .info{
+        position: relative;
+        top: 10px;
+    }
+    .franjanaranja{
+        width: 100%;
+        background-color: $naranja;
+    }
+    .cajablanca{
+        background-color:white;
+        width:100%;
+    }
+    .nomRest{
+        color: white;
+        margin-left: 56%;
+    }
+    .fa-heart{
+        color:white;
+        margin-right:5%;
+    }
+    .address{
+        color: orange;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+    .precio{
+        color: orange;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+    .rating{
+        color: orange;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
 }
 /* FIN FOOTER */
