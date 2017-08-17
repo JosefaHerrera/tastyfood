@@ -20293,11 +20293,9 @@ if (jQuery) {
         var name = localStorage.getItem('nombre');
     $('#nombre').html(name);
   };
-
   	});		
   });
 /*FIN validaciones*/
-
 $(document).ready(function() {
 	// Initialize collapse button
 	$(".button-collapse").sideNav();
@@ -20371,7 +20369,5 @@ $(document).ready(function() {
 
 
 
-  	});		
-  });
 /*FIN validaciones*/
 
