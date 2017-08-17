@@ -4,11 +4,54 @@
 	<meta charset="UTF-8">
 	<title>Tasty Food</title>
 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
 </head>
 <body>
-  	
+	<nav>
+		<ul id="slide-out" class="side-nav">
+			<li><div class="user-view">
+				<div class="background">
+					<img src="images/office.jpg">
+				</div>
+				<a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+				<a href="#!name"><span class="white-text name">John Doe</span></a>
+				<a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+			</div></li>
+			<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+			<li><a href="#!">Second Link</a></li>
+			<li><div class="divider"></div></li>
+			<li><a class="subheader">Subheader</a></li>
+			<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+		</ul>
+		<a href="index.html" data-activates="slide-out" class="button-collapse right"><i class="material-icons text-left">menu</i></a>
+		<a href="index.html"><i class="material-icons left">arrow_back</i></a>
+	</nav>
+	
+	<!-- Create account -->
+	<section class="create">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 center-align">
+					<h1 class="create-text">SIGN UP</h1>
+					<h6 class="create-parrafo">Nice to meet you</h6>
+				</div>
+				<div class="col s12 center-align">
+					<div class="grupo">
+						<input type="text" class="form-control" id="name-signup" placeholder="Your Name">
+						<div class="name-error "></div>
+						<input type="text" class="form-control" id="email-signup" placeholder="Your Email">
+						<div class="email-error"></div>
+						<input type="password" class="form-control" id="pass-signup" placeholder="Password">
+						<div class="pass-error"></div>
+						<a class="waves-effect waves-light btn btn-input center-align form-control" id="iniciar-sesion">CREATE ACCOUNT</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Fin Create account -->
 
 
 	<script src="dist/js/script.js"></script>
