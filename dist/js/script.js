@@ -20287,11 +20287,12 @@ if (jQuery) {
       //enviar a la siguiente página
   		else{
   			window.location.href = 'search.html';
-  	}
+  		}
+
   	});
         var name = localStorage.getItem('nombre');
     $('#nombre').html(name);
-  });
+  };
 
 
 $(document).ready(function() {
@@ -20349,6 +20350,9 @@ $(document).ready(function() {
 
 
 });
+
+
+
   	});		
   });
 /*FIN validaciones*/
