@@ -35,15 +35,15 @@ nav{
     margin-left: 50px;
     margin-right: 50px;
 }
-h6{
+	h6{
     font-size: 19px;
     color: white;
 
 }
-h4{
+	h4{
 	margin-top: 94px;
 }
-.favorites{
+	.favorites{
 	background-color: white;
 	.naranjop {
     background-color: $naranja;
@@ -52,4 +52,42 @@ h4{
     padding-bottom: 12px;
 }
 }
+}
+
+.create{
+	margin-top: 200px;
+	.create-text{
+		font-family: $fuente;
+		font-size: 120px;
+		font-weight: 500;
+		color: $naranja;
+	}
+	.create-parrafo{
+		font-family: $fuente_dos;
+		font-size: 30px;
+		color: $gris_oscuro;
+		margin: -1.5rem 0 .4rem;
+	}
+	.grupo{
+		margin-top: 100px;
+		input[type=text]:not(.browser-default),
+		input[type=password]:not(.browser-default){
+			background-color: white;
+			height: 5rem;
+			width: 95%;
+			font-size: 2.5rem;
+			padding: 18px;
+			padding-left: 20px;
+			margin:10px;
+		}
+		.btn{
+			width: 100%;
+			height: 6.5rem;
+			font-size: 2rem;
+			background-color: $naranja;
+			border-radius: 5px;
+			margin: 40px 8px;
+			padding: 28px;
+		}
+	}
 }
