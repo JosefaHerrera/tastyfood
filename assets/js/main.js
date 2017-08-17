@@ -9,6 +9,7 @@ $(document).ready(function() {
 	
 	$('#ciudades').change(function() {
 		$(".contenedorjson").empty(); //Al selecciona una nueva opciópn en el selec, se limpia el espacio y se anida la nueva info
+		$(".info").empty();
 	    var idCiudad = $('#ciudades').val();
 	    console.log(idCiudad);
 	    //valor seleccionado por el usuario
@@ -36,6 +37,7 @@ $(document).ready(function() {
 	            var comuna = ele.restaurant.location.locality;
 	            var precio = ele.restaurant.average_cost_for_two;
 	            var rating = ele.restaurant.user_rating.aggregate_rating;
+	            var idrest = ele.restaurant.id;
 	            $(".contenedorjson").append("<li><div class='card'><div class='card-image'><a class='imgdetails' type='button'><img src='"+img+"'></a></div><div class='card-content'><a type='button' class='restdetails'><i class='fa fa-cutlery' aria-hidden='true'></i></a><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
 	            
 	            $(".imgdetails").click(function(){
@@ -50,7 +52,8 @@ $(document).ready(function() {
 	            
 
 	             $(".restdetails").click(function(){
-	            	$(".info").append(name);
+	            	$(".info").empty();
+	            	$(".info").append("<div class='row'><div class='col s4'></div><div class='col s4' id='nombreCaja'>"+name+"</div><div class='col s4' id='nombreCaja'>"+name+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cuisine</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cost for two</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Rate</div><div class='col s4' id='blancoCaja'>"+rating+"</div><div class='col s4' id='blancoCaja'>"+rating+"</div></div>");
 	            })
 
 	        })
