@@ -33,9 +33,11 @@ $(document).ready(function() {
 	            var img = ele.restaurant.thumb;
 	            var name = ele.restaurant.name;
 	            var comuna = ele.restaurant.location.locality;
-	            $(".contenedorjson").append("<li><div class='card'><div class='card-image'><img src='"+img+"'></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
+	            $(".contenedorjson").append("<li><div class='card'><div class='card-image'><a class='imgdetails' type='button'><img src='"+img+"'></a></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
 	            
-
+	            $(".imgdetails").click(function(e){
+	            	$(".info").append(name);
+	            })
 
 	        })
 	    })
