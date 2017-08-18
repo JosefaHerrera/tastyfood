@@ -79,14 +79,14 @@ nav{
  	margin-top: 100px;
  	input[type=text]:not(.browser-default),
  	input[type=password]:not(.browser-default){
- 	background-color: white;
- 	height: 5rem;
- 	width: 95%;
- 	font-size: 2.5rem;
- 	padding: 18px;
- 	padding-left: 20px;
- 	margin:10px;
- }
+	 	background-color: white;
+	 	height: 5rem;
+	 	width: 95%;
+	 	font-size: 2.5rem;
+	 	padding: 18px;
+	 	padding-left: 20px;
+	 	margin:10px;
+	 }
  .btn{
  	width: 100%;
  	height: 6.5rem;
@@ -103,6 +103,7 @@ nav{
  	margin: 15px;
  	font-size: 30px;
  }
+}
 /*FIN create account*/
 /*section mapa */
 .discover{
@@ -287,5 +288,5 @@ footer{
     }
 
 }
-}
+
 /*fin footer*/

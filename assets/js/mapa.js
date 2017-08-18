@@ -1,4 +1,4 @@
-var map;
+  var map;
   var infowindow;
 
   function initMap() {
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 			$('#cocina').change(function(){
   			var kitchen = $("#cocina").val();
-  			initMap().reload();
+  			//initMap().reload();
   			
   			if(kitchen == cocinaGuardada){
   				console.log(cocinaGuardada);
