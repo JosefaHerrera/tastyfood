@@ -3,6 +3,11 @@
 	margin: 0;
 }
 
+body {
+    background-color: $gris;
+}
+
+
 nav{
 	background-color: $naranja;
 	
@@ -45,11 +50,12 @@ nav{
  		font-size: 35px;
  		color: white;
  		margin-top: 5px;
+    }
  	.input-fiel{
  		padding-top: 5%;
   	}
   }
- -/*FIN index*/
+ /*FIN index*/
 
 /* INICIO create account*/
 .create{
@@ -115,10 +121,6 @@ nav{
 
 
 /***** SIGN UP *****/
-
-body {
-	background-color: $gris;
-}
 
 
 #login {
@@ -327,8 +329,5 @@ footer{
     }
 
 }
-
-/* FIN FOOTER */
-/* FIN FOOTER */
-
-
+}
+/*fin footer*/
