@@ -1,7 +1,34 @@
 *{
-	margin:0;
-	padding:0;
+	padding: 0;
+	margin: 0;
 }
+
+nav{
+	background-color: $naranja;
+	
+	.title{
+		font-size: 32px;
+		font-family: $fuente;
+	}
+}
+
+/*section mapa */
+.discover{
+	#map{
+		height: 100vh;
+		width: 100%;
+		margin:0;
+		padding:0;
+	}
+
+	.input-fiel{
+		padding-top: 5%;
+	}
+}
+
+
+
+/*fin section mapa */
 nav{
 	background-color: $naranja;
 }
@@ -81,6 +108,7 @@ body {
 	}
 }
 
+
 .search_info {
 	z-index: 1;
 	position: absolute;
@@ -95,4 +123,130 @@ body {
 	}
 }
 	/* FIN ESTILOS SEARCH */
+
+	.card-content{
+		background-color: $naranja;
+    	color: white;
+    	
+    	.fa-cutlery{
+    		font-size: 16px;
+		    margin-left: -6%;
+		    margin-right: 5%;
+    	}
+    	.fa-map-marker{
+    		margin-left: -5%;
+    		margin-right: 2%;
+    	}
+    	.nombreR{
+    		font-size: 12px;
+    		font-weight: 100;
+    		position: relative;
+		    top: -18px;
+		    left: 11px;
+    	}
+    	.comuna{
+    		font-size: 12px;
+    		font-weight: 100;
+    		position: relative;
+		    top: -18px;
+		    left: 6%;
+    	}
+        .restdetails{
+            color:white;
+            cursor:pointer;
+        }
+	}
+}
+/* FIN ESTILOS SEARCH */
+
+/* FOOTER */
+footer{
+	background-color:$gris;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    .info{
+        position: relative;
+        top: 10px;
+    }
+    .franjanaranja{
+        width: 100%;
+        background-color: $naranja;
+    }
+    .cajablanca{
+        background-color:white;
+        width:100%;
+    }
+    .nomRest{
+        color: white;
+        margin-left: 56%;
+    }
+    .fa-heart{
+        color:white;
+        margin-right:5%;
+    }
+    .address{
+        color: $naranja;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+    .precio{
+        color: $naranja;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+    .rating{
+        color: $naranja;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+
+}
+
+/* FIN FOOTER */
+.white {
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h6{
+    font-size: 19px;
+    color: white;
+}
+	h4{
+	margin-top: 94px;
+}
+.favorites{
+	background-color: white;
+	.naranjop {
+    background-color: $naranja;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+	}
+}
+
+
+
+#nombreCaja{
+        background-color: $naranja;
+        color: white;
+}
+#blancoCaja{
+        background-color:white;
+        color:black;
+    .fa-circle{
+        color:$naranja;
+        position: relative;
+        left: -5%;
+    }
+}
+
+/* FIN FOOTER */
+
 
