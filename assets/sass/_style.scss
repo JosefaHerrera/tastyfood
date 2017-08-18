@@ -5,89 +5,173 @@
 
 nav{
 	background-color: $naranja;
-}
-
-body{
-	background-color: $gris;
-}
-
-/*INICIO index*/
-.welcome{
-	background-image: url('/dist/img/tastyfoodintro.jpg');
-	background-position: center;
-    background-size: cover;
-    height: 100vh;
-    .nombre-app{
-    	margin-top: 380px;
-    	font-family: $fuente;
-		font-size: 120px;
-		font-weight: 500;
-		color: white;
-    }
-   .botones{
-   		margin-top: 200px;
-	    .btn{
-			width: 100%;
-			height: 6.5rem;
-			font-size: 2.5rem;
-			background-color: $naranja;
-			border-radius: 10px;
-			margin: 20px 8px;
-			padding: 28px;
-		}
-   }
-   .dont-parrafo{
-		font-family: $fuente_dos;
-		font-size: 35px;
-		color: white;
-		margin-top: 5px;
-	}
-}
-/*FIN index*/
-
-/* INICIO create account*/
-.create{
-	margin-top: 200px;
-	.create-text{
+	
+	.title{
+		font-size: 32px;
 		font-family: $fuente;
-		font-size: 120px;
-		font-weight: 500;
-		color: $naranja;
-	}
-	.create-parrafo{
-		font-family: $fuente_dos;
-		font-size: 30px;
-		color: $gris_oscuro;
-		margin: -1.5rem 0 .4rem;
-	}
-	.grupo{
-		margin-top: 100px;
-		input[type=text]:not(.browser-default),
-		input[type=password]:not(.browser-default){
-			background-color: white;
-			height: 5rem;
-			width: 95%;
-			font-size: 2.5rem;
-			padding: 18px;
-			padding-left: 20px;
-			margin:10px;
-		}
-		.btn{
-			width: 100%;
-			height: 6.5rem;
-			font-size: 2rem;
-			background-color: $naranja;
-			border-radius: 5px;
-			margin: 40px 8px;
-			padding: 28px;
-		}
-		span{
-			background-color: rgba(0,0,0,0.7);
-			color: white;
-			padding: 10px 50px;
-			margin: 15px;
-			font-size: 30px;
-		}
 	}
 }
-/*FIN create account*/
+
+/*section mapa */
+.discover{
+	#map{
+		height: 100vh;
+		width: 100%;
+		margin:0;
+		padding:0;
+	}
+
+	.input-fiel{
+		padding-top: 5%;
+	}
+}
+
+
+
+/*fin section mapa */
+nav{
+	background-color: $naranja;
+}
+
+/* ESTILOS SEARCH */
+.search{
+	background-color:$gris;
+}
+
+.contenedorjson{
+	column-count:3;
+	display: inline-block;
+	box-sizing: border-box;
+	column-gap:10px;
+	li{
+		list-style:none;
+		-webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+	}
+
+	.card-content{
+		background-color: $naranja;
+    	color: white;
+    	
+    	.fa-cutlery{
+    		font-size: 16px;
+		    margin-left: -6%;
+		    margin-right: 5%;
+    	}
+    	.fa-map-marker{
+    		margin-left: -5%;
+    		margin-right: 2%;
+    	}
+    	.nombreR{
+    		font-size: 12px;
+    		font-weight: 100;
+    		position: relative;
+		    top: -18px;
+		    left: 11px;
+    	}
+    	.comuna{
+    		font-size: 12px;
+    		font-weight: 100;
+    		position: relative;
+		    top: -18px;
+		    left: 6%;
+    	}
+        .restdetails{
+            color:white;
+            cursor:pointer;
+        }
+	}
+}
+/* FIN ESTILOS SEARCH */
+
+/* FOOTER */
+footer{
+	background-color:$gris;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    .info{
+        position: relative;
+        top: 10px;
+    }
+    .franjanaranja{
+        width: 100%;
+        background-color: $naranja;
+    }
+    .cajablanca{
+        background-color:white;
+        width:100%;
+    }
+    .nomRest{
+        color: white;
+        margin-left: 56%;
+    }
+    .fa-heart{
+        color:white;
+        margin-right:5%;
+    }
+    .address{
+        color: $naranja;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+    .precio{
+        color: $naranja;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+    .rating{
+        color: $naranja;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 7px;
+    }
+
+}
+
+/* FIN FOOTER */
+.white {
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h6{
+    font-size: 19px;
+    color: white;
+}
+	h4{
+	margin-top: 94px;
+}
+.favorites{
+	background-color: white;
+	.naranjop {
+    background-color: $naranja;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+	}
+}
+
+
+
+#nombreCaja{
+        background-color: $naranja;
+        color: white;
+}
+#blancoCaja{
+        background-color:white;
+        color:black;
+    .fa-circle{
+        color:$naranja;
+        position: relative;
+        left: -5%;
+    }
+}
+
+/* FIN FOOTER */
+
