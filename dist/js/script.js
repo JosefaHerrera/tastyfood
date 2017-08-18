@@ -20253,119 +20253,80 @@ if (jQuery) {
   };
 })(jQuery);
 
+$(document).ready(function() {
   // Initialize collapse button
   $(".button-collapse").sideNav();
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
 
-/*INICIO validaciones*/
-  $(document).ready(function(){
-    $("#iniciar-sesion").click(function(){
-      var valEmail = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-      var valPass = /^\d{6}([0-9])*$/;
-      //validar campos vacios
-      if($('.form-control').val().length == 0 || $('.form-control').val().length === ""){
-        $(".name-error").append('<span>Invalid name</span>');
-        return false;
-      }
-      //validar email
-      if(!valEmail.test($('#email-signup').val().trim())){
-        $(".email-error").append('<span>Invalid email</span>');
-      }
-      //validar contraseña
-      if(!valPass.test($('#pass-signup').val().trim())){
-        $(".pass-error").append('<span>Invalid Password (min 6 characters)</span>');
-      }
-      //enviar a la siguiente página
-      else{
-        window.location.href = 'search.html';
-      }
+  //Initalize select
+  $('select').material_select();
+  
+  $('#ciudades').change(function() {
+    $(".contenedorjson").empty(); //Al selecciona una nueva opciópn en el selec, se limpia el espacio y se anida la nueva info
+    $(".info").empty();
+      var idCiudad = $('#ciudades').val();
+      console.log(idCiudad);
+      //valor seleccionado por el usuario
 
-    });
-  });
-/*FIN validaciones*/
-$(document).ready(function() {
-	// Initialize collapse button
-	$(".button-collapse").sideNav();
-	// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-	//$('.collapsible').collapsible();
-
-	//Initalize select
-	$('select').material_select();
-
-
-	$('#ciudades').change(function() {
-		$(".contenedorjson").empty(); //Al selecciona una nueva opciópn en el selec, se limpia el espacio y se anida la nueva info
-		$(".info").empty();
-	    var idCiudad = $('#ciudades').val();
-	    console.log(idCiudad);
-	    //valor seleccionado por el usuario
-
-	    var apiKey = "14ef190d0d46132d2c5ad0b7a911e606";
-	    $.ajax({
-	        url: 'https://developers.zomato.com/api/v2.1/location_details',
-	        type: 'GET',
-	        dataType: 'json',
-	        beforeSend: function(request){
-	            request.setRequestHeader("Content-Type","application/json");
-	            request.setRequestHeader("user-key", apiKey);
-	        },
-	        data : {
-	            'entity_id' : idCiudad,
-	            'entity_type' : 'city'
-	        }
-	    })
-
-
-
-	.done(function(res) {
-            console.log(res);
-            res.best_rated_restaurant.forEach(function(ele){
-                console.log(ele);
-				var ide = ele.restaurant.id;
-				var img = ele.restaurant.thumb;
-				var name = ele.restaurant.name;
-				var comuna = ele.restaurant.location.locality;
-				var direccion = ele.restaurant.location.address;
-				var moneda = ele.restaurant.currency;
-				var precioPorDos = ele.restaurant.average_cost_for_two;
-				var rating = ele.restaurant.user_rating.aggregate_rating;
-
-                $(".contenedorjson").append("<li><div class='card' id='"+ide+"'><div class='card-image'><a class='imgdetails' type='button' id='foto-"+ide+"'><img src='"+img+"'></a></div><div class='card-content'><a type='button' class='restdetails' id='tenedor-"+ide+"'><i class='fa fa-cutlery' aria-hidden='true'></i></a><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
-
-                $("#foto-"+ ide).click(function(){
-                    $(".info").empty();
-                    $(".info").append("<div class='franjanaranja'><div class='row'><div class='col s8'><p class='nomRest'>"+name+"</p></div><div class='col s4 right-align'><i class='fa fa-heart' aria-hidden='true'></i></div></div><div class='cajablanca'><div class='row'><div class='col s12'><p class='address'>Address</p></div></div><div class='row'><div class='col s12'><p class='ubicacionrest'>"+comuna+"</p></div></div><div class='row'><div class='col s12'><p class='precio'>Precio</p></div></div><div class='row'><div class='col s12'><p class='preciorest'>"+moneda+precio+"</p></div></div><div class='row'><div class='col s12'><p class='rating'>Rating</p></div></div><div class='row'><div class='col s12'><p class='ratingrest'>"+rating+"</p></div></div></div>");
-                })
-
-                //primero reconozco el restaurant con '#tenedor-'+ ide
-                    
-                 $("#tenedor-"+ ide).click(function(){
-                     //vacio el contenedor gris footer
-                    $(".info").empty();
-                    $(".info").append("<div class='row'><div class='col s4'></div><div class='col s4' id='nombreCaja'>"+name+"</div><div class='col s4' id='nombreCaja'>"+name+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cuisine</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cost for two</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Rate</div><div class='col s4' id='blancoCaja'>"+rating+"</div><div class='col s4' id='blancoCaja'>"+rating+"</div></div>");
-                })
+      var apiKey = "4e7a74042a2f392bc1d0435f749f26b6";
+      $.ajax({
+          url: 'https://developers.zomato.com/api/v2.1/location_details',
+          type: 'GET',
+          dataType: 'json',
+          beforeSend: function(request){
+              request.setRequestHeader("Content-Type","application/json");
+              request.setRequestHeader("user-key", apiKey);
+          },
+          data : {
+              'entity_id' : idCiudad,
+              'entity_type' : 'city'
+          }
+      })
+      .done(function(res) {
+        console.log(res);
+          res.best_rated_restaurant.forEach(function(ele){
+              console.log(ele);
+              var img = ele.restaurant.thumb;
+              var name = ele.restaurant.name;
+              var comuna = ele.restaurant.location.locality;
+              var precio = ele.restaurant.average_cost_for_two;
+              var rating = ele.restaurant.user_rating.aggregate_rating;
+              var idrest = ele.restaurant.id;
+              $(".contenedorjson").append("<li><div class='card'><div class='card-image'><a class='imgdetails' type='button'><img src='"+img+"'></a></div><div class='card-content'><a type='button' class='restdetails'><i class='fa fa-cutlery' aria-hidden='true'></i></a><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
+              
+              $(".imgdetails").click(function(){
+                $(".info").empty();
+                $(".info").append("<div class='franjanaranja'><div class='row'><div class='col s8'><p class='nomRest'>"+name+"</p></div><div class='col s4 right-align'><i class='fa fa-heart' aria-hidden='true'></i></div></div><div class='cajablanca'><div class='row'><div class='col s12'><p class='address'>Address</p></div></div><div class='row'><div class='col s12'><p class='ubicacionrest'>"+comuna+"</p></div></div><div class='row'><div class='col s12'><p class='precio'>Precio</p></div></div><div class='row'><div class='col s12'><p class='preciorest'>"+precio+"</p></div></div><div class='row'><div class='col s12'><p class='rating'>Rating</p></div></div><div class='row'><div class='col s12'><p class='ratingrest'>'"+rating+"</p></div></div></div>");
 
                 $(".fa-heart").click(function(){
-                    $(this).css('color', 'tomato');
+                  $(this).css('color', 'tomato');
                 })
-            })
-        })
-	    .fail(function(response) {
-	        console.log("error");
-	    })
-	    .always(function() {
-	        console.log("complete");
-	    });
+              })
 
-	});
+              
+
+               $(".restdetails").click(function(){
+                $(".info").empty();
+                $(".info").append("<div class='row'><div class='col s4'></div><div class='col s4' id='nombreCaja'>"+name+"</div><div class='col s4' id='nombreCaja'>"+name+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cuisine</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cost for two</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Rate</div><div class='col s4' id='blancoCaja'>"+rating+"</div><div class='col s4' id='blancoCaja'>"+rating+"</div></div>");
+              })
+
+          })
+      })
+      .fail(function(response) {
+        console.log(response);
+          console.log("error");
+      })
+      .always(function() {
+          console.log("complete");
+      });
+      
+  });
 
 
 
 });
-/*FIN validaciones*/
-
-var map;
+  var map;
   var infowindow;
 
   function initMap() {
@@ -20433,7 +20394,7 @@ $(document).ready(function() {
 
 			$('#cocina').change(function(){
   			var kitchen = $("#cocina").val();
-  			initMap().reload();
+  			//initMap().reload();
   			
   			if(kitchen == cocinaGuardada){
   				console.log(cocinaGuardada);
@@ -20447,3 +20408,47 @@ $(document).ready(function() {
 
 
 
+
+$(document).ready(function() {
+  $("#iniciar-sesion").click(validateForm);
+  $('#iniciar-sesion').click(onLogin);//listener to button click
+  $('#login').click(onLogin);//listener to button click
+
+});
+
+function validateForm() {
+    var valid = true;
+    if (!(/^([a-zñáéíóú]{2,13})+$/.test($("#firstname").val()))) {
+        $("#firstname").css("border", "1px solid red");
+        alert('El nombre debe ser válido');
+        valid = false;
+    }
+    if ($('#name-signup').val() == '') {
+        $(".name-error").append('<span>Invalid name</span>');
+        alert('Username no debe estar vacío');
+        valid = false;
+    }
+
+    if (!(/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test($('#email-signup').val()))) {
+        $(".email-error").append('<span>Invalid email</span>');
+        alert('Error en el email');
+        valid = false;
+    }
+    if ($('#password').val() == '') {
+        $(".pass-error").append('<span>Invalid Password (min 6 characters)</span>');
+
+        alert('Password no debe estar vacío');
+        valid = false;
+    }
+    return valid;
+}
+
+function onLogin(){
+    if (validateForm()) { //If validate form is True
+        $("#iniciar-sesion").attr("href", "search.html");
+        $("#login").attr("href", "search.html");
+    }
+}
+
+
+     
