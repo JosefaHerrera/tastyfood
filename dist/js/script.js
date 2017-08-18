@@ -20293,46 +20293,6 @@ $(document).ready(function() {
 	//Initalize select
 	$('select').material_select();
 
-	var apiKey = "27447235cea72bd049a49d4eb7d07474";
-	$.ajax({
-		url: 'https://developers.zomato.com/api/v2.1/location_details',
-		type: 'GET',
-		dataType: 'json',
-		beforeSend: function(request){
-			request.setRequestHeader("Content-Type","application/json");
-			request.setRequestHeader("user-key", apiKey);
-		},
-		data : {
-			'entity_id' : '83',
-			'entity_type' : 'city'
-		}
-	})
-	.done(function(res) {
-		res.best_rated_restaurant.forEach(function(ele){
-			console.log(ele);
-			var ide = ele.restaurant.id;
-			var img = ele.restaurant.thumb;
-			var name = ele.restaurant.name;
-			var comuna = ele.restaurant.location.locality;
-			var direccion = ele.restaurant.location.address;
-			var moneda = ele.restaurant.currency;
-			var precioPorDos = ele.restaurant.average_cost_for_two;
-			var rating = ele.restaurant.user_rating.aggregate_rating;
-			
-			$(".contenedorjson").append("<li><div class='card' id='"+ide+"'><div class='card-image'><a href='#' class='search_local' id='foto-"+ide+"'><img src='"+img+"' class='responsive-img'></a></div><div class='card-content'><div class='row'><div class='col s6'><p class='nombreR'>"+name+"</p></div><div class='col s6 right-align'><i class='fa fa-cutlery' aria-hidden='true'></i><span class='comuna'>"+comuna+"</span></div></div></div></div></li></a>");
-
-			 $('#foto-'+ ide).click(function(){
-			 	$(".search_caja").append(rating)
-			 })
-
-		})
-	})
-	.fail(function(response) {
-		console.log(response);
-		console.log("error");
-	})
-	.always(function() {
-		console.log("complete");
 
 	$('#ciudades').change(function() {
 		$(".contenedorjson").empty(); //Al selecciona una nueva opciópn en el selec, se limpia el espacio y se anida la nueva info
@@ -20365,9 +20325,20 @@ $(document).ready(function() {
 	            var precio = ele.restaurant.average_cost_for_two;
 	            var rating = ele.restaurant.user_rating.aggregate_rating;
 	            var idrest = ele.restaurant.id;
-	            $(".contenedorjson").append("<li><div class='card'><div class='card-image'><a class='imgdetails' type='button'><img src='"+img+"'></a></div><div class='card-content'><a type='button' class='restdetails'><i class='fa fa-cutlery' aria-hidden='true'></i></a><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
-	            
-	            $(".imgdetails").click(function(){
+				var ide = ele.restaurant.id;
+				var img = ele.restaurant.thumb;
+				var name = ele.restaurant.name;
+				var comuna = ele.restaurant.location.locality;
+				var direccion = ele.restaurant.location.address;
+				var moneda = ele.restaurant.currency;
+				var precioPorDos = ele.restaurant.average_cost_for_two;
+				var rating = ele.restaurant.user_rating.aggregate_rating;
+			
+				$(".contenedorjson").append("<li><div class='card'><div class='card-image'><a class='imgdetails search_local' id='foto-"+ide+"' type='button'><img class='responsive-img' src='"+img+"'></a></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
+
+	           /* $(".contenedorjson").append("<li><div class='card' id='"+ide+"'><div class='card-image'><a href='#' class='search_local' id='foto-"+ide+"'><img src='"+img+"' class='responsive-img'></a></div><div class='card-content'><div class='row'><div class='col s6'><p class='nombreR'>"+name+"</p></div><div class='col s6 right-align'><i class='fa fa-cutlery' aria-hidden='true'></i><span class='comuna'>"+comuna+"</span></div></div></div></div></li></a>");
+				*/
+	            $('#foto-'+ ide).click(function(){
 	            	$(".info").empty();
 	            	$(".info").append("<div class='franjanaranja'><div class='row'><div class='col s8'><p class='nomRest'>"+name+"</p></div><div class='col s4 right-align'><i class='fa fa-heart' aria-hidden='true'></i></div></div><div class='cajablanca'><div class='row'><div class='col s12'><p class='address'>Address</p></div></div><div class='row'><div class='col s12'><p class='ubicacionrest'>"+comuna+"</p></div></div><div class='row'><div class='col s12'><p class='precio'>Precio</p></div></div><div class='row'><div class='col s12'><p class='preciorest'>"+precio+"</p></div></div><div class='row'><div class='col s12'><p class='rating'>Rating</p></div></div><div class='row'><div class='col s12'><p class='ratingrest'>'"+rating+"</p></div></div></div>");
 
@@ -20382,6 +20353,8 @@ $(document).ready(function() {
 	            	$(".info").empty();
 	            	$(".info").append("<div class='row'><div class='col s4'></div><div class='col s4' id='nombreCaja'>"+name+"</div><div class='col s4' id='nombreCaja'>"+name+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cuisine</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cost for two</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Rate</div><div class='col s4' id='blancoCaja'>"+rating+"</div><div class='col s4' id='blancoCaja'>"+rating+"</div></div>");
 	            })
+			
+			
 
 	        })
 	    })
