@@ -20258,6 +20258,8 @@ if (jQuery) {
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
 
+
+
 var map;
   var infowindow;
 
@@ -20340,12 +20342,9 @@ $(document).ready(function() {
 
 
 
+
 /*INICIO validaciones*/
   $(document).ready(function(){
-
-  	$("#iniciar-sesion").click(function(event){
-  		if($("#name-signup").val() == "" || !(/[0-9]/.test($("#name-signup").val()))){
-  			$("#name-signup").append($("#name-signup").val("Add name"));
         localStorage.setItem('nombre',$("#name-signup").val());
 
   	$("#iniciar-sesion").click(function(){
@@ -20376,7 +20375,9 @@ $(document).ready(function() {
   };
   	});		
   });
+
 /*FIN validaciones*/
+
 $(document).ready(function() {
 	// Initialize collapse button
 	$(".button-collapse").sideNav();
@@ -20447,3 +20448,4 @@ $(document).ready(function() {
 	});
 });
 /*FIN validaciones*/
+
