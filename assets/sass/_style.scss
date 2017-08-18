@@ -11,6 +11,9 @@ nav{
 		font-family: $fuente;
 	}
 }
+nav{
+    background-color: $naranja;
+}
 
 /*section mapa */
 .discover{
@@ -25,13 +28,8 @@ nav{
 		padding-top: 5%;
 	}
 }
-
-
-
 /*fin section mapa */
-nav{
-	background-color: $naranja;
-}
+
 
 /* ESTILOS SEARCH */
 .search{
@@ -83,11 +81,52 @@ nav{
         }
 	}
 }
+#nombreCaja{
+        background-color: $naranja;
+        color: white;
+}
+#blancoCaja{
+        background-color:white;
+        color:black;
+    .fa-circle{
+        color:$naranja;
+        position: relative;
+        left: -5%;
+    }
+}
 /* FIN ESTILOS SEARCH */
+
+/*perfil*/
+.white {
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h6{
+    font-size: 19px;
+    color: white;
+}
+	h4{
+	margin-top: 94px;
+}
+.favorites{
+	background-color: white;
+	.naranjop {
+    background-color: $naranja;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+	}
+}
+
+
+
 
 /* FOOTER */
 footer{
-	background-color:$gris;
+    background-color:$gris;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -133,45 +172,5 @@ footer{
 }
 
 /* FIN FOOTER */
-.white {
-    background-color: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-h6{
-    font-size: 19px;
-    color: white;
-}
-	h4{
-	margin-top: 94px;
-}
-.favorites{
-	background-color: white;
-	.naranjop {
-    background-color: $naranja;
-    color: white;
-    padding-top: 12px;
-    padding-bottom: 12px;
-	}
-}
-
-
-
-#nombreCaja{
-        background-color: $naranja;
-        color: white;
-}
-#blancoCaja{
-        background-color:white;
-        color:black;
-    .fa-circle{
-        color:$naranja;
-        position: relative;
-        left: -5%;
-    }
-}
-
 /* FIN FOOTER */
 
