@@ -4,14 +4,60 @@
 	<meta charset="UTF-8">
 	<title>Tasty Food</title>
 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
 </head>
 <body>
-  	
+<section id="login">
+    <nav>
+      <ul id="slide-out" class="side-nav">
+        <li><div class="user-view">
+          <div class="background">
+            <img src="images/office.jpg">
+          </div>
+          <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+          <a href="#!name"><span class="white-text name">John Doe</span></a>
+          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="discover.html" data-activates="slide-out" class="button-collapse right"><i class="material-icons text-left">menu</i></a>
+      <i class="material-icons left">arrow_back</i>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="titulo-logo center">
+            <h3>LOG IN</h3>
+            <span>Nice to meet you</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="login_campos input-field col s12">
+            <input placeholder="  Your Email" id="login_email" type="text">
+            <input placeholder="  Password" id="login_pass" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="login_btn center">
+            <a class="waves-effect waves-light btn">LOG IN</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
-	<script src="dist/js/script.js"></script>
+  <script src="dist/js/script.js"></script>
 </body>
 </html>
