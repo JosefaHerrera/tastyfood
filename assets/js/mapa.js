@@ -1,8 +1,4 @@
-  // This example requires the Places library. Include the libraries=places
-  // parameter when you first load the API. For example:
-  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-  var map;
+var map;
   var infowindow;
 
   function initMap() {
@@ -42,3 +38,48 @@
       infowindow.open(map, this);
     });
   }
+
+
+
+$(document).ready(function() {
+
+ 	var apiKey = "14ef190d0d46132d2c5ad0b7a911e606";
+		
+	$.ajax({
+		url: 'https://developers.zomato.com/api/v2.1/location_details',
+		type: 'GET',
+		dataType: 'json',
+		beforeSend: function(request){
+	        request.setRequestHeader("Content-Type","application/json");
+	        request.setRequestHeader("user-key", apiKey);
+	    },
+	    data : {
+	    	'entity_id' : '83',
+	    	'entity_type' : 'city'
+	    }
+	})
+	.done(function(res) {
+		var lugar = res.best_rated_restaurant;
+
+		lugar.forEach(function(e){
+			var cocinaGuardada = e.restaurant.cuisines;
+
+			$('#cocina').change(function(){
+  			var kitchen = $("#cocina").val();
+  			initMap().reload();
+  			
+  			if(kitchen == cocinaGuardada){
+  				console.log(cocinaGuardada);
+  			}
+  		
+  			});
+		});	
+	})
+  		
+  });
+
+  
+ 
+
+
+
