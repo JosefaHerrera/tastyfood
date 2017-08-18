@@ -20315,16 +20315,13 @@ $(document).ready(function() {
 	            'entity_type' : 'city'
 	        }
 	    })
-	    .done(function(res) {
-	    	console.log(res);
-	        res.best_rated_restaurant.forEach(function(ele){
-	            console.log(ele);
-	            var img = ele.restaurant.thumb;
-	            var name = ele.restaurant.name;
-	            var comuna = ele.restaurant.location.locality;
-	            var precio = ele.restaurant.average_cost_for_two;
-	            var rating = ele.restaurant.user_rating.aggregate_rating;
-	            var idrest = ele.restaurant.id;
+
+
+
+	.done(function(res) {
+            console.log(res);
+            res.best_rated_restaurant.forEach(function(ele){
+                console.log(ele);
 				var ide = ele.restaurant.id;
 				var img = ele.restaurant.thumb;
 				var name = ele.restaurant.name;
@@ -20333,31 +20330,27 @@ $(document).ready(function() {
 				var moneda = ele.restaurant.currency;
 				var precioPorDos = ele.restaurant.average_cost_for_two;
 				var rating = ele.restaurant.user_rating.aggregate_rating;
-			
-				$(".contenedorjson").append("<li><div class='card'><div class='card-image'><a class='imgdetails search_local' id='foto-"+ide+"' type='button'><img class='responsive-img' src='"+img+"'></a></div><div class='card-content'><i class='fa fa-cutlery' aria-hidden='true'></i><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
 
-	           /* $(".contenedorjson").append("<li><div class='card' id='"+ide+"'><div class='card-image'><a href='#' class='search_local' id='foto-"+ide+"'><img src='"+img+"' class='responsive-img'></a></div><div class='card-content'><div class='row'><div class='col s6'><p class='nombreR'>"+name+"</p></div><div class='col s6 right-align'><i class='fa fa-cutlery' aria-hidden='true'></i><span class='comuna'>"+comuna+"</span></div></div></div></div></li></a>");
-				*/
-	            $('#foto-'+ ide).click(function(){
-	            	$(".info").empty();
-	            	$(".info").append("<div class='franjanaranja'><div class='row'><div class='col s8'><p class='nomRest'>"+name+"</p></div><div class='col s4 right-align'><i class='fa fa-heart' aria-hidden='true'></i></div></div><div class='cajablanca'><div class='row'><div class='col s12'><p class='address'>Address</p></div></div><div class='row'><div class='col s12'><p class='ubicacionrest'>"+comuna+"</p></div></div><div class='row'><div class='col s12'><p class='precio'>Precio</p></div></div><div class='row'><div class='col s12'><p class='preciorest'>"+precio+"</p></div></div><div class='row'><div class='col s12'><p class='rating'>Rating</p></div></div><div class='row'><div class='col s12'><p class='ratingrest'>'"+rating+"</p></div></div></div>");
+                $(".contenedorjson").append("<li><div class='card' id='"+ide+"'><div class='card-image'><a class='imgdetails' type='button' id='foto-"+ide+"'><img src='"+img+"'></a></div><div class='card-content'><a type='button' class='restdetails' id='tenedor-"+ide+"'><i class='fa fa-cutlery' aria-hidden='true'></i></a><p class='nombreR'>"+name+"</p><i class='fa fa-map-marker' aria-hidden='true'></i><p class='comuna'>"+comuna+"</p></div></div></li>");
 
-	            	$(".fa-heart").click(function(){
-	            		$(this).css('color', 'tomato');
-	            	})
-	            })
+                $("#foto-"+ ide).click(function(){
+                    $(".info").empty();
+                    $(".info").append("<div class='franjanaranja'><div class='row'><div class='col s8'><p class='nomRest'>"+name+"</p></div><div class='col s4 right-align'><i class='fa fa-heart' aria-hidden='true'></i></div></div><div class='cajablanca'><div class='row'><div class='col s12'><p class='address'>Address</p></div></div><div class='row'><div class='col s12'><p class='ubicacionrest'>"+comuna+"</p></div></div><div class='row'><div class='col s12'><p class='precio'>Precio</p></div></div><div class='row'><div class='col s12'><p class='preciorest'>"+moneda+precio+"</p></div></div><div class='row'><div class='col s12'><p class='rating'>Rating</p></div></div><div class='row'><div class='col s12'><p class='ratingrest'>"+rating+"</p></div></div></div>");
+                })
 
-	            
+                //primero reconozco el restaurant con '#tenedor-'+ ide
+                    
+                 $("#tenedor-"+ ide).click(function(){
+                     //vacio el contenedor gris footer
+                    $(".info").empty();
+                    $(".info").append("<div class='row'><div class='col s4'></div><div class='col s4' id='nombreCaja'>"+name+"</div><div class='col s4' id='nombreCaja'>"+name+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cuisine</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cost for two</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Rate</div><div class='col s4' id='blancoCaja'>"+rating+"</div><div class='col s4' id='blancoCaja'>"+rating+"</div></div>");
+                })
 
-	             $(".restdetails").click(function(){
-	            	$(".info").empty();
-	            	$(".info").append("<div class='row'><div class='col s4'></div><div class='col s4' id='nombreCaja'>"+name+"</div><div class='col s4' id='nombreCaja'>"+name+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cuisine</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Cost for two</div><div class='col s4' id='blancoCaja'>"+precio+"</div><div class='col s4' id='blancoCaja'>"+precio+"</div></div><div class='row'><div class='col s4' id='blancoCaja'><i class='fa fa-circle' aria-hidden='true'></i>Rate</div><div class='col s4' id='blancoCaja'>"+rating+"</div><div class='col s4' id='blancoCaja'>"+rating+"</div></div>");
-	            })
-			
-			
-
-	        })
-	    })
+                $(".fa-heart").click(function(){
+                    $(this).css('color', 'tomato');
+                })
+            })
+        })
 	    .fail(function(response) {
 	        console.log("error");
 	    })
@@ -20450,10 +20443,7 @@ $(document).ready(function() {
 		});	
 	})
   		
-  });
-
-  
- 
+});
 
 
 
