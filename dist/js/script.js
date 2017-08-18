@@ -20445,11 +20445,5 @@ $(document).ready(function() {
 	    });
 	    
 	});
-
-
-
 });
 /*FIN validaciones*/
-
-
-
