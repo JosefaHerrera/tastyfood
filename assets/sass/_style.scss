@@ -1,7 +1,34 @@
 *{
-	margin:0;
-	padding:0;
+	padding: 0;
+	margin: 0;
 }
+
+nav{
+	background-color: $naranja;
+	
+	.title{
+		font-size: 32px;
+		font-family: $fuente;
+	}
+}
+
+/*section mapa */
+.discover{
+	#map{
+		height: 100vh;
+		width: 100%;
+		margin:0;
+		padding:0;
+	}
+
+	.input-fiel{
+		padding-top: 5%;
+	}
+}
+
+
+
+/*fin section mapa */
 nav{
 	background-color: $naranja;
 }
@@ -148,3 +175,4 @@ footer{
     }
 }
 /* FIN FOOTER */
+
